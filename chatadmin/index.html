@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Chat Keren</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Tombol Chat */
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #00b894;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    animation: bounce 2s infinite;
+    z-index: 9999;
+}
+
+/* Notif merah */
+.chat-button::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 12px;
+    height: 12px;
+    background: red;
+    border-radius: 50%;
+}
+
+/* Animasi */
+@keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Popup teks */
+.chat-popup {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    font-size: 14px;
+    display: none;
+}
+</style>
+
+</head>
+<body>
+
+<h2>Chat Admin</h2>
+<p>Silakan hubungi admin jika butuh bantuan 👇</p>
+
+<!-- Tombol Chat -->
+<div class="chat-button" onclick="openChat()">💬</div>
+
+<!-- Popup -->
+<div class="chat-popup" id="popup">
+    Halo 👋 butuh bantuan? Chat admin yuk!
+</div>
+
+<!-- Tawk.to Script -->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/69ab2947ca9e341c37d5dc57/1jj29ige4';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+<script>
+// buka chat
+function openChat() {
+    Tawk_API.maximize();
+}
+
+// popup muncul
+setTimeout(() => {
+    document.getElementById("popup").style.display = "block";
+}, 3000);
+
+// auto buka chat
+setTimeout(() => {
+    if (typeof Tawk_API !== "undefined") {
+        Tawk_API.maximize();
+    }
+}, 5000);
+</script>
+
+</body>
+</html>
